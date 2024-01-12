@@ -1,5 +1,5 @@
 {
-	"name": "ds_02",
+	"name": "ds_input1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobConnection",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Book1.xlsx",
+				"fileName": "Book.csv",
 				"container": "raw"
 			},
 			"columnDelimiter": ",",
@@ -20,10 +20,21 @@
 		},
 		"schema": [
 			{
-				"name": "ID\tSALARY\tNAME\tDEPT_ID",
+				"name": "ID",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "SALARY",
+				"type": "String"
+			},
+			{
+				"name": "DEPTID",
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

@@ -1,5 +1,5 @@
 {
-	"name": "PL_Dataflow",
+	"name": "PL_DF1",
 	"properties": {
 		"activities": [
 			{
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "df_dataflow1",
+						"referenceName": "df_dataflow2",
 						"type": "DataFlowReference"
 					},
 					"integrationRuntime": {
@@ -27,8 +27,6 @@
 				}
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2024-01-12T06:36:59Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
