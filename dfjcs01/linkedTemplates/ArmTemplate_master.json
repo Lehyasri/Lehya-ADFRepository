@@ -31,6 +31,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_blob Connection'"
 		},
+		"LS_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_blob'"
+		},
+		"ls_sql con_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sql con'"
+		},
 		"LS_Datalake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://jcsdatalake01.dfs.core.windows.net/"
@@ -87,6 +95,12 @@
 					},
 					"LS_blob Connection_connectionString": {
 						"value": "[parameters('LS_blob Connection_connectionString')]"
+					},
+					"LS_blob_connectionString": {
+						"value": "[parameters('LS_blob_connectionString')]"
+					},
+					"ls_sql con_connectionString": {
+						"value": "[parameters('ls_sql con_connectionString')]"
 					},
 					"LS_Datalake_properties_typeProperties_url": {
 						"value": "[parameters('LS_Datalake_properties_typeProperties_url')]"

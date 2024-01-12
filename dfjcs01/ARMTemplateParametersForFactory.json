@@ -23,6 +23,12 @@
 		"LS_blob Connection_connectionString": {
 			"value": ""
 		},
+		"LS_blob_connectionString": {
+			"value": ""
+		},
+		"ls_sql con_connectionString": {
+			"value": ""
+		},
 		"LS_Datalake_properties_typeProperties_url": {
 			"value": "https://jcsdatalake01.dfs.core.windows.net/"
 		},
