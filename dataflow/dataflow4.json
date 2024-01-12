@@ -57,7 +57,7 @@
 				"          Size = iif(isNull(Size)|| Color == 'null','NA',Size)) ~> derivedColumn",
 				"derivedColumn pivot(groupBy(Size),",
 				"     pivotBy(Color),",
-				"     columnNaming: '$N$V',",
+				"     columnNaming: '$N_$VCalculated',",
 				"     lateral: true) ~> pivot",
 				"pivot sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
