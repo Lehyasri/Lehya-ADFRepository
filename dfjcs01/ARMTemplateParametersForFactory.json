@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dfjcs01"
+		},
+		"LS_BlobConnection_connectionString": {
+			"value": ""
+		},
+		"LS_BlobSorage_connectionString": {
+			"value": ""
+		},
+		"LS_Datalake_accountKey": {
+			"value": ""
+		},
+		"LS_SQL Connection_connectionString": {
+			"value": ""
+		},
+		"LS_SQL_connectionString": {
+			"value": ""
+		},
+		"LS_blob Connection_connectionString": {
+			"value": ""
+		},
+		"LS_Datalake_properties_typeProperties_url": {
+			"value": "https://jcsdatalake01.dfs.core.windows.net/"
+		},
+		"LS_HTTP_properties_typeProperties_url": {
+			"value": "@{linkedService().baseUrl}"
+		},
+		"LS_HTTPConnection_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceURL}"
+		}
+	}
+}
