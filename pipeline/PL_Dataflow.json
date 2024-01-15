@@ -16,12 +16,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "df_dataflow1",
+						"referenceName": "dataflow6",
 						"type": "DataFlowReference"
 					},
-					"integrationRuntime": {
-						"referenceName": "integrationRuntime",
-						"type": "IntegrationRuntimeReference"
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
 					},
 					"traceLevel": "Coarse"
 				}

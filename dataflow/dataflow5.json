@@ -1,0 +1,68 @@
+{
+	"name": "dataflow5",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_movies",
+						"type": "DatasetReference"
+					},
+					"name": "source"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_output_file",
+						"type": "DatasetReference"
+					},
+					"name": "sink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "aggregate"
+				},
+				{
+					"name": "unpivot"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          movie as integer,",
+				"          title as string,",
+				"          genres as string,",
+				"          year as short,",
+				"          Rating as short,",
+				"          {Rotton Tomato} as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
+				"     ignoreNoFilesFound: false) ~> source",
+				"source aggregate(groupBy(year),",
+				"     avg_comedy = round(avgIf(split(lower(genres),'|')[1]=='comedy',Rating),1,2),",
+				"          avg_drama = round(avgIf(split(lower(genres),'|')[1]=='drama',Rating),1,2),",
+				"          avg_action = round(avgIf(split(lower(genres),'|')[1]=='action',Rating),1,2)) ~> aggregate",
+				"aggregate unpivot(output(",
+				"          avg_genres as string,",
+				"          avg_rating as double",
+				"     ),",
+				"     ungroupBy(year),",
+				"     lateral: false,",
+				"     ignoreNullPivots: true) ~> unpivot",
+				"unpivot sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['unpivot.csv'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink"
+			]
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "ds_output_files",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL Connection",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "moviesDB"
+		}
+	}
+}
