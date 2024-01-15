@@ -5,19 +5,11 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "ds_1",
-						"type": "DatasetReference"
-					},
 					"name": "source"
 				}
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "ds_2",
-						"type": "DatasetReference"
-					},
 					"name": "sink"
 				}
 			],
@@ -34,18 +26,16 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     inferDriftedColumnTypes: true,",
-				"     ignoreNoFilesFound: false) ~> source",
+				"     inferDriftedColumnTypes: true) ~> source",
 				"source derive(year = toInteger(trim(right(country,6),'()')),",
 				"          country = toString(left(country,length(country)-6))) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('hash', 1)) ~> sink"
+				"     partitionBy('hash', 1),",
+				"     preCommands: [],",
+				"     postCommands: []) ~> sink"
 			]
 		}
 	}
