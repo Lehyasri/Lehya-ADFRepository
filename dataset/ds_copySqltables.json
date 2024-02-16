@@ -1,0 +1,13 @@
+{
+	"name": "ds_copySqltables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Onpremsqlserver",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,9 +1,9 @@
 {
 	"name": "dfjcs",
-	"location": "eastus",
+	"location": "centralus",
 	"identity": {
 		"type": "SystemAssigned",
-		"principalId": "e08bd8a9-fa1d-47f6-9a0d-a499012bb331",
-		"tenantId": "86b5078b-e63d-489b-85e8-580cee5128af"
+		"principalId": "52e7b1ee-15c8-4555-ba97-68b0a971ed0a",
+		"tenantId": "bea626ef-4dcd-4a99-bf36-1a24b5e426cc"
 	}
 }
